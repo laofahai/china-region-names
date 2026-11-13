@@ -1,0 +1,28 @@
+name: 数据校验
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: 测试与产物一致性
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: 配置 Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: 重建完整产物
+        run: python -m tools.build
+      - name: 运行测试
+        run: python -m unittest discover -s tests -v
+      - name: 检查产物与人工映射一致性
+        run: git diff --exit-code -- dist data/overrides.csv

@@ -125,6 +125,12 @@ python3 -m unittest discover -s tests -v
 
 底表升级时先准备新版本来源快照、记录来源日期和校验值，再审核新增、撤销、更名及上级变化，检查旧CSV映射，重建并比较完整差异；不要把更新来源文件等同于已核实所有新变更。
 
+## 自动校验与版本发布
+
+GitHub Actions在推送、Pull Request及手动触发时运行测试、离线重建完整产物，并检查提交的产物与人工映射一致。Action固定到具体提交，工作流只有仓库读取权限，不自动抓取或覆盖来源数据。
+
+本仓库提供数据文件，无需部署服务器。当前不自动发布软件包或创建版本；需要固定引用时，可在审核来源与完整差异后创建Git标签及GitHub Release，并注明数据截至日期和覆盖范围。日常维护提交不等于发布一个新数据版本。
+
 ## 相近项目
 
 - [Administrative-divisions-of-China-pro](https://github.com/pandelix/Administrative-divisions-of-China-pro)：已有`short_name`及JSON/SQL简化数据，README标注2023年更新；本次未发现其具备本文的全范围歧义保全契约。
