@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "base_as_of": "2025-12-31",
+  "checked_on": "2026-11-13",
+  "sources": [
+    {
+      "id": "areacodes-2025",
+      "url": "https://github.com/yescallop/areacodes/blob/e2c2b2e1fb4ce1fb76e879aa0b80e229adaf950c/data/2025.txt",
+      "revision": "e2c2b2e1fb4ce1fb76e879aa0b80e229adaf950c",
+      "as_of": "2025-12-31",
+      "license": "CC0-1.0",
+      "coverage": "34省级、333地级、2845县级；港澳台下级不在该年表内"
+    },
+    {
+      "id": "nlsc-household-20261113",
+      "url": "https://data.gov.tw/dataset/102011",
+      "api": "https://api.nlsc.gov.tw/other/ListTown1",
+      "checked_on": "2026-11-13",
+      "license": "Government Data Open License 1.0",
+      "license_url": "https://data.gov.tw/license",
+      "coverage": "22个本地市县、368个乡镇市区；包含福建金门与连江的本地户政口径",
+      "conversion": "OpenCC t2s；生成数据只保留简体",
+      "upstream_hashes": {
+        "counties": "5e9dfa16d989e569179f02375775ac5f0036d866305a4e11456e989ff59504f1",
+        "A": "28f02758973901261c7d2c6b3733ed06a196fa64250a1deca7fc08564629157d",
+        "B": "ba1110730823460041413d814c96fd1285608644b78cc47b97f0023f5c68f642",
+        "C": "a8a137668e86450ec4322cd36f1a6c3a3296e42bea236d00ded7a44b46f4a84f",
+        "D": "5033854bfc60a50864a7c987c89fefb6b9d34fc2a8ad1704e43c740d1d47b3af",
+        "E": "a22df9702c0586af1572c41adf5aa9f8e35c704154ad03088f9ef45b2cab0950",
+        "F": "39772d890f523f642a8c8db7225c44fc042813a9f44d7e5457c4bd279856605d",
+        "G": "24b6fdf78fc1688bf1e4e922e91d29b1b15fdc82dad2ae4415f723a113b80c41",
+        "H": "a56d3c8b5a14030f2d52b1f56213671007b111120f23a45dc050e358a3b43ea7",
+        "I": "5c838a689e8a689167761e200568ed928eea2dc9a6af8f89533ad646643bae33",
+        "J": "b23908b615dd5d59ee0d58f6128bd135650329b89d4505efe0165450bf04c4e3",
+        "K": "b4d5e5f7f9b5b844ba2b5538ff26b287c5125a6eea30e1ca0a5238bd909543bf",
+        "M": "a883a67f152d80b67f3dde99d87862b6af3ed2be2ea2fc8178e4be43dd551fc5",
+        "N": "8edfc3505ccbfc533c219c5c592e25daabcf6880fb9a898fce389dbd08232133",
+        "O": "b3d9b4241ae701f0b9441ff8f260050c36f546368347ab7af84958dc66b6abf4",
+        "P": "45c023f8d9adc859b5df2b61cf15c927a56aa63fe3f2460bfc6568a9268a6b62",
+        "Q": "4c16b78a7ea738c0590e24cc6834bab388f6e3a902ac5143e37f79af4058f78b",
+        "T": "01181c698e9a9f0448e292ea51e3bc437ab81289a29ce5d7dc22c7fd7461e392",
+        "U": "38feac3f4541a6902d7ed913afb33f5923d9f3b7e023accd9ff11f8dcb4dc0d0",
+        "V": "d48f33ebc4caa9fb46e8dec747bd9bba76108f98d2a51d3cbc5ef30023eb248d",
+        "W": "38b6cf05402852551202e7cbe83476ab22d56376647c7d5de777eac63a132c04",
+        "X": "94e3a2e37fc900d57b65d03827c7f758689b1e6871a1a62d928d1241cbcddbe4",
+        "Z": "1e46b6f2a43306d38a921c97b6c02d5f53e3717dc108631a8f97885a4ceef90b"
+      }
+    },
+    {
+      "id": "hkmo-reviewed-20261113",
+      "url": "https://github.com/kamaslau/chinese_regions/tree/bf53a944e4c62f945bc7a0c051cead75d9011038/src/static",
+      "revision": "bf53a944e4c62f945bc7a0c051cead75d9011038",
+      "license": "MIT",
+      "coverage": "香港18区；澳门7堂区＋路氹地理区域；社区标识不视为官方区划代码",
+      "verified_against": [
+        "https://www.landsd.gov.hk/tc/resources/mapping-information/hk-geographic-data.html",
+        "https://bo.dsaj.gov.mo/bo/ii/2024/35/avisosoficiais_cn.asp",
+        "https://cadastre.gis.gov.mo/MGSP_Cad/chn/bak/main_20160628.html"
+      ]
+    },
+    {
+      "id": "xinjiang-cenling-20260326",
+      "url": "https://www.xinjiang.gov.cn/xinjiang/tzgg/202603/285e5d25b8ad4eae8df6b0f0efe847f6.shtml",
+      "as_of": "2026-03-26",
+      "coverage": "仅核实岑岭县名称、设立及喀什地区上级；未对官方编码作声明"
+    }
+  ],
+  "files": [
+    {
+      "path": "sources/areacodes-2025.txt",
+      "sha256": "73520f533c8e3f1aadb3bb55166656a491fb1e7703b2e2172e5694ec8845bab0"
+    },
+    {
+      "path": "sources/supplement-2026-11-13.json",
+      "sha256": "74b193a639d7d1be649e6684625a850464150f3957ab4fd68ac6f5114b9e4c8b"
+    }
+  ]
+}

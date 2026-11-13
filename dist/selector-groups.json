@@ -1,0 +1,101 @@
+[
+  {
+    "id": "selector:1101",
+    "code": "1101",
+    "code_system": "selector_group",
+    "parent_id": "mca:110000",
+    "name": "市辖区",
+    "short_name": "北京市",
+    "display_name": "北京市",
+    "kind": "selector_group",
+    "reason": "三级选择器分组标签，不是新增行政层级"
+  },
+  {
+    "id": "selector:1201",
+    "code": "1201",
+    "code_system": "selector_group",
+    "parent_id": "mca:120000",
+    "name": "市辖区",
+    "short_name": "天津市",
+    "display_name": "天津市",
+    "kind": "selector_group",
+    "reason": "三级选择器分组标签，不是新增行政层级"
+  },
+  {
+    "id": "selector:3101",
+    "code": "3101",
+    "code_system": "selector_group",
+    "parent_id": "mca:310000",
+    "name": "市辖区",
+    "short_name": "上海市",
+    "display_name": "上海市",
+    "kind": "selector_group",
+    "reason": "三级选择器分组标签，不是新增行政层级"
+  },
+  {
+    "id": "selector:5001",
+    "code": "5001",
+    "code_system": "selector_group",
+    "parent_id": "mca:500000",
+    "name": "市辖区",
+    "short_name": "重庆市",
+    "display_name": "重庆市",
+    "kind": "selector_group",
+    "reason": "三级选择器分组标签，不是新增行政层级"
+  },
+  {
+    "id": "selector:5002",
+    "code": "5002",
+    "code_system": "selector_group",
+    "parent_id": "mca:500000",
+    "name": "县",
+    "short_name": "重庆市辖县",
+    "display_name": "重庆市辖县",
+    "kind": "selector_group",
+    "reason": "三级选择器分组标签，不是新增行政层级"
+  },
+  {
+    "id": "selector:4190",
+    "code": "4190",
+    "code_system": "selector_group",
+    "parent_id": "mca:410000",
+    "name": "省直辖县级行政区划",
+    "short_name": "河南直辖县级",
+    "display_name": "河南直辖县级",
+    "kind": "selector_group",
+    "reason": "三级选择器分组标签，不是新增行政层级"
+  },
+  {
+    "id": "selector:4290",
+    "code": "4290",
+    "code_system": "selector_group",
+    "parent_id": "mca:420000",
+    "name": "省直辖县级行政区划",
+    "short_name": "湖北直辖县级",
+    "display_name": "湖北直辖县级",
+    "kind": "selector_group",
+    "reason": "三级选择器分组标签，不是新增行政层级"
+  },
+  {
+    "id": "selector:4690",
+    "code": "4690",
+    "code_system": "selector_group",
+    "parent_id": "mca:460000",
+    "name": "省直辖县级行政区划",
+    "short_name": "海南直辖县级",
+    "display_name": "海南直辖县级",
+    "kind": "selector_group",
+    "reason": "三级选择器分组标签，不是新增行政层级"
+  },
+  {
+    "id": "selector:6590",
+    "code": "6590",
+    "code_system": "selector_group",
+    "parent_id": "mca:650000",
+    "name": "自治区直辖县级行政区划",
+    "short_name": "新疆直辖县级",
+    "display_name": "新疆直辖县级",
+    "kind": "selector_group",
+    "reason": "三级选择器分组标签，不是新增行政层级"
+  }
+]
