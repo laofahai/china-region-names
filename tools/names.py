@@ -55,20 +55,25 @@ def compile_mapping(records, overrides):
         visiting.remove(key)
         return paths[key]
     for key in by_id:path(key)
-    names=defaultdict(set);candidates=defaultdict(set)
+    names=defaultdict(set);candidates=defaultdict(set);displays=defaultdict(set)
+    requested_displays={}
     for key,record in by_id.items():
         names[record['name']].add(key)
         candidate=_candidate(record,overrides.get(key,{}))
         if not candidate:raise ValueError('候选简称不能为空：'+key)
         record['candidate_name']=candidate
         candidates[candidate].add(key)
+        display=overrides.get(key,{}).get('display_name') or (candidate if record['level']=='province' else record['name'])
+        requested_displays[key]=display
+        if display!=record['name']:displays[display].add(key)
     short_conflicts={}
-    blocked=set()
-    for label,keys in candidates.items():
-        targets=keys|names.get(label,set())
+    # 正式同名不能靠人为编出不同简称绕过全称保全；人工显示值也必须参与消歧。
+    blocked={key for keys in names.values() if len(keys)>1 for key in keys}
+    for label in candidates.keys()|displays.keys():
+        targets=candidates.get(label,set())|displays.get(label,set())|names.get(label,set())
         if len(targets)>1:
             blocked.update(targets)
-            if any(by_id[k]['candidate_name']!=by_id[k]['name'] for k in targets):short_conflicts[label]=sorted(targets)
+            if any(by_id[k]['candidate_name']!=by_id[k]['name'] or requested_displays[k]!=by_id[k]['name'] for k in targets):short_conflicts[label]=sorted(targets)
     for record in by_id.values():
         key=record['id'];name=record['name'];override=overrides.get(key,{})
         ambiguous=key in blocked

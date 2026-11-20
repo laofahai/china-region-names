@@ -2658,7 +2658,7 @@ mca:530921,CN,mca,530921,county,administrative,mca:530900,凤庆县,凤庆,凤�
 mca:530922,CN,mca,530922,county,administrative,mca:530900,云县,云县,云县,云县,云南省 > 临沧市 > 云县,False,source_published,areacodes-2025,保留全称
 mca:530923,CN,mca,530923,county,administrative,mca:530900,永德县,永德,永德,永德县,云南省 > 临沧市 > 永德县,False,source_published,areacodes-2025,常规行政后缀简称
 mca:530924,CN,mca,530924,county,administrative,mca:530900,镇康县,镇康,镇康,镇康县,云南省 > 临沧市 > 镇康县,False,source_published,areacodes-2025,常规行政后缀简称
-mca:530925,CN,mca,530925,county,administrative,mca:530900,双江拉祜族佤族布朗族傣族自治县,双江拉祜族佤族布朗族,双江拉祜族佤族布朗族,双江拉祜族佤族布朗族傣族自治县,云南省 > 临沧市 > 双江拉祜族佤族布朗族傣族自治县,False,source_published,areacodes-2025,自治名称显式简称；仍须通过全范围冲突保全
+mca:530925,CN,mca,530925,county,administrative,mca:530900,双江拉祜族佤族布朗族傣族自治县,双江,双江,双江拉祜族佤族布朗族傣族自治县,云南省 > 临沧市 > 双江拉祜族佤族布朗族傣族自治县,False,source_published,areacodes-2025,自治名称显式简称；临沧市政府使用双江；仍须通过全范围冲突保全
 mca:530926,CN,mca,530926,county,administrative,mca:530900,耿马傣族佤族自治县,耿马,耿马,耿马傣族佤族自治县,云南省 > 临沧市 > 耿马傣族佤族自治县,False,source_published,areacodes-2025,自治名称显式简称；仍须通过全范围冲突保全
 mca:530927,CN,mca,530927,county,administrative,mca:530900,沧源佤族自治县,沧源,沧源,沧源佤族自治县,云南省 > 临沧市 > 沧源佤族自治县,False,source_published,areacodes-2025,自治名称显式简称；仍须通过全范围冲突保全
 mca:532300,CN,mca,532300,prefecture,administrative,mca:530000,楚雄彝族自治州,楚雄,楚雄彝族自治州,楚雄彝族自治州,云南省 > 楚雄彝族自治州,False,source_published,areacodes-2025,简称存在歧义，保留全称

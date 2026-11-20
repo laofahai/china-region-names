@@ -10,6 +10,17 @@ def row(code, name, parent='', level='county', namespace='test'):
 
 
 class NamingTests(unittest.TestCase):
+    def test_manual_display_collision_preserves_every_full_name(self):
+        rows=[row('1','甲县'),row('2','乙县')]
+        result,report=compile_mapping(rows,{'test:1':{'name':'甲县','short_name':'甲地','display_name':'乙县','reason':'测试显示冲突'}})
+        self.assertEqual([(r['short_name'],r['display_name']) for r in result],[('甲县','甲县'),('乙县','乙县')])
+        self.assertIn('乙县',report['short_conflicts'])
+
+    def test_original_same_name_cannot_be_reabbreviated_by_overrides(self):
+        rows=[row('1','朝阳区'),row('2','朝阳区')]
+        result,_=compile_mapping(rows,{'test:1':{'name':'朝阳区','short_name':'甲地','reason':'测试'},'test:2':{'name':'朝阳区','short_name':'乙地','reason':'测试'}})
+        self.assertTrue(all(r['short_name']==r['display_name']==r['name'] for r in result))
+
     def test_country_is_china_for_every_record(self):
         result,_=compile_mapping([row('71','台湾省',level='province'),row('81','香港特别行政区',level='province'),row('82','澳门特别行政区',level='province')],{})
         self.assertTrue(all(r.get('country_code')=='CN' for r in result))

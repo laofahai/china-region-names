@@ -47876,12 +47876,12 @@
       "kind": "administrative",
       "code_status": "source_published",
       "country_code": "CN",
-      "candidate_name": "双江拉祜族佤族布朗族",
-      "short_name": "双江拉祜族佤族布朗族",
+      "candidate_name": "双江",
+      "short_name": "双江",
       "display_name": "双江拉祜族佤族布朗族傣族自治县",
       "qualified_name": "云南省 > 临沧市 > 双江拉祜族佤族布朗族傣族自治县",
       "needs_parent_context": false,
-      "reason": "自治名称显式简称；仍须通过全范围冲突保全"
+      "reason": "自治名称显式简称；临沧市政府使用双江；仍须通过全范围冲突保全"
     },
     {
       "id": "mca:530926",

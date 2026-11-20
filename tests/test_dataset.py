@@ -83,6 +83,12 @@ class DatasetTests(unittest.TestCase):
                 self.assertTrue(r[f])
                 self.assertFalse(set(r[f])&forbidden,(r['id'],f,r[f]))
 
+    def test_shortened_autonomous_names_do_not_leave_partial_ethnic_suffixes(self):
+        for r in self.records:
+            if '自治' in r['name'] and r['short_name']!=r['name']:
+                self.assertNotIn('族',r['short_name'],r['id'])
+        self.assertEqual(self.by_id['mca:530925']['short_name'],'双江')
+
     def test_build_reproducible_and_does_not_rewrite_manual_csv(self):
         names=['mapping.json','mapping.csv','ambiguities.json','selector-groups.json']
         before={n:hashlib.sha256((ROOT/'dist'/n).read_bytes()).hexdigest() for n in names}
