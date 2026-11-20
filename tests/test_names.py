@@ -63,9 +63,10 @@ class NamingTests(unittest.TestCase):
         self.assertEqual([r['short_name'] for r in result],[r['name'] for r in result])
 
     def test_reviewed_autonomous_override_and_normal_names(self):
-        result,_=compile_mapping([row('1','海西蒙古族藏族自治州',level='prefecture'),row('2','温州市',level='prefecture'),row('3','忠县'),row('4','山东省',level='province')],{'test:1':{'name':'海西蒙古族藏族自治州','short_name':'海西','reason':'审核通过'}})
-        self.assertEqual([r['short_name'] for r in result],['海西','温州','忠县','山东'])
-        self.assertEqual(result[1]['display_name'],'温州市')
+        result,_=compile_mapping([row('1','海西蒙古族藏族自治州',level='prefecture'),row('2','温州市',level='prefecture'),row('3','忠县'),row('4','山东省',level='province'),row('5','南江县'),row('6','历下区')],{'test:1':{'name':'海西蒙古族藏族自治州','short_name':'海西','reason':'审核通过'}})
+        self.assertEqual([r['short_name'] for r in result],['海西','温州','忠县','山东','南江','历下区'])
+        self.assertEqual(result[1]['display_name'],'温州')
+        self.assertTrue(all(r['display_name']==r['short_name'] for r in result))
 
     def test_manual_display_cannot_override_ambiguity(self):
         result,_=compile_mapping([row('1','阿克苏地区',level='prefecture'),row('2','阿克苏市')],{'test:1':{'name':'阿克苏地区','short_name':'阿克苏','display_name':'阿克苏','reason':'测试强制覆盖'}})

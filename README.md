@@ -33,7 +33,7 @@ print(by_id["mca:653200"]["short_name"])  # 和田地区
 | `name` | 完整名称，简体 |
 | `candidate_name` | 审核冲突前的候选简称，不用于自动关联 |
 | `short_name` | 无歧义时可简称；有歧义则保留完整名称 |
-| `display_name` | 通用显示名称；普通地级和县级名称保留全称，省份无歧义才简称 |
+| `display_name` | 通用显示名称；所有层级默认采用审核后的`short_name`，有歧义或未审核时保留全称 |
 | `qualified_name` | 包含全部上级的完整路径，供正式同名记录消歧 |
 | `needs_parent_context` | 全名仍然重名，展示时需要上级信息 |
 | `code_system` / `code_status` | 编码来源及是否已核实；社区标识不冒充官方代码 |
@@ -114,7 +114,7 @@ id,name,short_name,display_name,reason
 mca:513400,凉山彝族自治州,凉山,,自治名称显式简称
 ```
 
-`display_name`留空时按默认显示策略生成。`name`必须与锁定底表一致，更名后旧映射会报错，避免无声覆盖。生成器自动执行全范围冲突检查；即使CSV填写了简称，发生歧义仍保留全称。
+`display_name`留空时默认等于审核后的`short_name`，省、市、区县使用同一规则；不额外去掉“区”等未审核后缀。`name`必须与锁定底表一致，更名后旧映射会报错，避免无声覆盖。生成器自动执行全范围冲突检查；即使CSV填写了简称，发生歧义仍保留全称。
 
 ```bash
 python3 -m tools.build

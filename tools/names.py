@@ -63,7 +63,7 @@ def compile_mapping(records, overrides):
         if not candidate:raise ValueError('候选简称不能为空：'+key)
         record['candidate_name']=candidate
         candidates[candidate].add(key)
-        display=overrides.get(key,{}).get('display_name') or (candidate if record['level']=='province' else record['name'])
+        display=overrides.get(key,{}).get('display_name') or candidate
         requested_displays[key]=display
         if display!=record['name']:displays[display].add(key)
     short_conflicts={}
@@ -78,7 +78,7 @@ def compile_mapping(records, overrides):
         key=record['id'];name=record['name'];override=overrides.get(key,{})
         ambiguous=key in blocked
         record['short_name']=name if ambiguous else record['candidate_name']
-        display=override.get('display_name') or (record['short_name'] if record['level']=='province' else name)
+        display=override.get('display_name') or record['short_name']
         record['display_name']=name if ambiguous else display
         record['qualified_name']=' > '.join(paths[key])
         record['needs_parent_context']=len(names[name])>1
